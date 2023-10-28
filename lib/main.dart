@@ -1,3 +1,4 @@
+import 'package:decipher/screens/home/home_screen.dart';
 import 'package:decipher/screens/login_screen.dart';
 import 'package:decipher/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Figtree",
       ),
-      routes: {LoginScreen.id: (context) => LoginScreen()},
+      routes: {
+        LoginScreen.id: (context) => LoginScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
+      },
     );
   }
 }

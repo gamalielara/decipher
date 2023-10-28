@@ -1,3 +1,4 @@
+import 'package:decipher/screens/home/home_screen.dart';
 import 'package:decipher/theme/colors.dart';
 import 'package:decipher/theme/text.dart';
 import 'package:flutter/cupertino.dart';
@@ -33,7 +34,9 @@ class LoginScreen extends StatelessWidget {
           ),
           SizedBox(height: 25),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, HomeScreen.id);
+            },
             style: TextButton.styleFrom(
               backgroundColor: AppThemeColor.primary,
             ),
