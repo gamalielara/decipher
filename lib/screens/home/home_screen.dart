@@ -23,18 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
         width: double.infinity,
         height: double.infinity,
         child: SafeArea(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-              child: Column(
+            child: Stack(
                 children: [
                   Header(),
                   Body(),
                 ],
-              ),
             ),
-          ),
         ));
   }
 }
