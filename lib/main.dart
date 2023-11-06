@@ -1,5 +1,6 @@
 import 'package:decipher/screens/home/home_screen.dart';
 import 'package:decipher/screens/login_screen.dart';
+import 'package:decipher/screens/note/main.dart';
 import 'package:decipher/theme/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginScreen.id: (context) => LoginScreen(),
         HomeScreen.id: (context) => HomeScreen(),
+        NoteScreen.id: (context) => NoteScreen(),
       },
     );
   }

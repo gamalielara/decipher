@@ -22,13 +22,14 @@ class Body extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(height: 30),
+              const SizedBox(height: 25),
               Container(
                 width: double.infinity,
+                margin: const EdgeInsets.only(left: 10),
                 child: Text(
                   "My Notes",
                   style: boldText.copyWith(
-                    fontSize: 50,
+                    fontSize: 40,
                   ),
                   textAlign: TextAlign.left,
                 ),
