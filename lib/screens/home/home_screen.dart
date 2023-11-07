@@ -19,16 +19,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppThemeColor.bgColor,
-        width: double.infinity,
-        height: double.infinity,
-        child: SafeArea(
-            child: Stack(
-                children: [
-                  Header(),
-                  Body(),
-                ],
-            ),
-        ));
+      color: AppThemeColor.bgColor,
+      width: double.infinity,
+      height: double.infinity,
+      child: Stack(
+        children: [
+          Header(),
+          Body(),
+        ],
+      ),
+    );
   }
 }

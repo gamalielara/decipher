@@ -11,12 +11,12 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          margin: EdgeInsets.only(top: 200),
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          margin: const EdgeInsets.only(top: 200),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
+            borderRadius: const BorderRadius.only(
+              topLeft:  Radius.circular(20),
+              topRight:  Radius.circular(20),
             ),
             color: AppThemeColor.dark,
           ),

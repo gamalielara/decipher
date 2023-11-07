@@ -18,7 +18,7 @@ class Header extends StatelessWidget {
           children: [
             const Positioned(top: 0, left: 0, right: 0, child: HomeBanner()),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+              padding: EdgeInsets.symmetric(vertical: 50, horizontal: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
