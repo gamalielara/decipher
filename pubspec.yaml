@@ -16,6 +16,9 @@ dependencies:
 
   flutter_svg: ^2.0.7
 
+  flutter_quill:
+    git: https://github.com/singerdmx/flutter-quill.git
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
