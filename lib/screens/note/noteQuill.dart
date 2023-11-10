@@ -21,8 +21,8 @@ class NoteQuill extends StatelessWidget {
         child: Container(
             child: Expanded(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              NoteQuillToolbar(controller: _controller),
               QuillEditor.basic(
                 configurations: QuillEditorConfigurations(
                   readOnly: false,
@@ -49,11 +49,20 @@ class NoteQuill extends StatelessWidget {
                         const VerticalSpacing(15, 15),
                         const VerticalSpacing(15, 15),
                         const BoxDecoration()),
+                    lists: DefaultListBlockStyle(
+                        regularText.copyWith(fontSize: 16),
+                        const VerticalSpacing(1, 1),
+                        const VerticalSpacing(1, 1),
+                        const BoxDecoration(), null),
+                    leading: DefaultTextBlockStyle(
+                        regularText.copyWith(fontSize: 16),
+                        const VerticalSpacing(1, 1),
+                        const VerticalSpacing(1, 1),
+                        const BoxDecoration()),
                     color: const Color(0xFFE5E5E5),
                   ),
                 ),
               ),
-              NoteQuillToolbar(controller: _controller)
             ],
           ),
         )));

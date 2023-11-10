@@ -1,6 +1,7 @@
 import 'package:decipher/theme/colors.dart';
 import 'package:decipher/theme/text.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class NoteBodyHeader extends StatelessWidget {

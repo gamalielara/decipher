@@ -29,7 +29,7 @@ class NoteQuillToolbar extends StatelessWidget {
                           QuillToolbarToggleStyleButton(
                             attribute: Attribute.bold,
                             controller: controller,
-                            options: const QuillToolbarToggleStyleButtonOptions(
+                            options:  const QuillToolbarToggleStyleButtonOptions(
                               iconData: Icons.format_bold,
                               iconSize: 20,
                             ),
@@ -98,3 +98,6 @@ class NoteQuillToolbar extends StatelessWidget {
     );
   }
 }
+
+
+
