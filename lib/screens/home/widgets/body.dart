@@ -1,3 +1,4 @@
+import 'package:decipher/models/note.dart';
 import 'package:decipher/screens/home/widgets/note_box.dart';
 import 'package:decipher/theme/colors.dart';
 import 'package:decipher/theme/text.dart';
@@ -15,8 +16,8 @@ class Body extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
-              topLeft:  Radius.circular(20),
-              topRight:  Radius.circular(20),
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
             ),
             color: AppThemeColor.dark,
           ),
@@ -42,9 +43,11 @@ class Body extends StatelessWidget {
                   runSpacing: 20,
                   alignment: WrapAlignment.center,
                   children: List.generate(
-                    10,
-                    (index) => Column(
-                      children: [NoteBox(color: AppThemeColor.primary)],
+                    sampleNotes.length,
+                    (index) => NoteBox(
+                      color: AppThemeColor.primary,
+                      title: sampleNotes[index].title,
+                      body: sampleNotes[index].body,
                     ),
                   ),
                   // children: [],

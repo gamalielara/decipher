@@ -15,7 +15,7 @@ class NoteQuillToolbar extends StatelessWidget {
         configurations: QuillBaseToolbarConfigurations(
             toolbarSize: 25 * 2,
             multiRowsDisplay: false,
-            color: AppThemeColor.primary,
+            color: AppThemeColor.bgColor,
             toolbarIconAlignment: WrapAlignment.spaceAround,
             childrenBuilder: (context) {
               final controller = this.controller;

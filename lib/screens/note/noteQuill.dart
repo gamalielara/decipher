@@ -12,17 +12,17 @@ class NoteQuill extends StatefulWidget {
 
 class _NoteQuillState extends State<NoteQuill> {
   final QuillController _controller = QuillController.basic();
-  Delta noteValue = Delta.fromJson([]);
+  List<dynamic> noteValue = [];
+
+  @override
+  void initState() {
+    _controller.addListener(() {
+      noteValue = _controller.document.toDelta().toJson();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    _controller.addListener(() {
-      print("EDITOR VALUE TO JSON ${_controller.document.toDelta().toJson()}");
-      // setState(() {
-      //   noteValue =
-      //   // print("EDITOR VALUE: ${noteValue}");
-      // });
-    });
     return QuillProvider(
       configurations: QuillConfigurations(
         controller: _controller,
@@ -35,6 +35,9 @@ class _NoteQuillState extends State<NoteQuill> {
           child: Column(
             children: [
               NoteQuillToolbar(controller: _controller),
+              const SizedBox(
+                height: 20,
+              ),
               Flexible(
                 child: QuillEditor.basic(
                   configurations: QuillEditorConfigurations(
