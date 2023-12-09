@@ -48,7 +48,7 @@ class _NoteQuillState extends State<NoteQuill> {
                     customStyles: DefaultStyles(
                       bold: boldText,
                       paragraph: DefaultTextBlockStyle(
-                          regularText.copyWith(fontSize: 16),
+                          regularText.copyWith(fontSize: 18),
                           const VerticalSpacing(1, 1),
                           const VerticalSpacing(1, 1),
                           const BoxDecoration()),
@@ -58,26 +58,37 @@ class _NoteQuillState extends State<NoteQuill> {
                           const VerticalSpacing(15, 15),
                           const BoxDecoration()),
                       h2: DefaultTextBlockStyle(
-                          boldText.copyWith(fontSize: 20),
+                          boldText.copyWith(fontSize: 23),
                           const VerticalSpacing(15, 15),
                           const VerticalSpacing(15, 15),
                           const BoxDecoration()),
                       h3: DefaultTextBlockStyle(
-                          boldText.copyWith(fontSize: 15),
+                          boldText.copyWith(fontSize: 20),
                           const VerticalSpacing(15, 15),
                           const VerticalSpacing(15, 15),
                           const BoxDecoration()),
                       lists: DefaultListBlockStyle(
-                          regularText.copyWith(fontSize: 16),
+                          regularText.copyWith(fontSize: 18),
                           const VerticalSpacing(1, 1),
-                          const VerticalSpacing(1, 1),
+                          const VerticalSpacing(0, 0),
                           const BoxDecoration(),
                           null),
                       leading: DefaultTextBlockStyle(
-                          regularText.copyWith(fontSize: 16),
+                          regularText.copyWith(fontSize: 18),
                           const VerticalSpacing(1, 1),
                           const VerticalSpacing(1, 1),
                           const BoxDecoration()),
+                      quote: DefaultTextBlockStyle(
+                        regularText.copyWith(fontSize: 18, fontStyle: FontStyle.italic),
+                        const VerticalSpacing(1, 1),
+                        const VerticalSpacing(1, 1),
+                        BoxDecoration(
+                          border: Border(
+                            left: BorderSide(
+                                width: 4, color: AppThemeColor.light),
+                          ),
+                        ),
+                      ),
                       color: AppThemeColor.textWhite,
                     ),
                   ),

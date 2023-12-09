@@ -19,6 +19,7 @@ class QuillIconButton extends StatelessWidget {
       attribute: attribute,
       controller: controller,
       options: QuillToolbarToggleStyleButtonOptions(
+        fillColor: AppThemeColor.primary,
         iconData: iconData,
         iconSize: 20,
         iconTheme: const QuillIconTheme(
@@ -54,33 +55,45 @@ class NoteQuillToolbar extends StatelessWidget {
                     alignment: WrapAlignment.spaceBetween,
                     children: [
                       QuillIconButton(
-                          controller: controller,
-                          iconData: Icons.format_bold,
-                          attribute: Attribute.bold),
+                        controller: controller,
+                        iconData: Icons.format_bold,
+                        attribute: Attribute.bold,
+                      ),
                       QuillIconButton(
-                          controller: controller,
-                          iconData: Icons.format_italic,
-                          attribute: Attribute.italic),
+                        controller: controller,
+                        iconData: Icons.format_italic,
+                        attribute: Attribute.italic,
+                      ),
                       QuillIconButton(
-                          controller: controller,
-                          iconData: Icons.format_underline,
-                          attribute: Attribute.underline),
+                        controller: controller,
+                        iconData: Icons.format_underline,
+                        attribute: Attribute.underline,
+                      ),
                       QuillIconButton(
-                          controller: controller,
-                          iconData: Icons.format_list_numbered,
-                          attribute: Attribute.ol),
+                        controller: controller,
+                        iconData: Icons.format_list_numbered,
+                        attribute: Attribute.ol,
+                      ),
                       QuillIconButton(
-                          controller: controller,
-                          iconData: Icons.format_list_bulleted,
-                          attribute: Attribute.ul),
+                        controller: controller,
+                        iconData: Icons.format_list_bulleted,
+                        attribute: Attribute.ul,
+                      ),
                       QuillIconButton(
-                          controller: controller,
-                          iconData: Icons.format_quote,
-                          attribute: Attribute.blockQuote),
+                        controller: controller,
+                        iconData: Icons.format_quote,
+                        attribute: Attribute.blockQuote,
+                      ),
+                      QuillIconButton(
+                        controller: controller,
+                        iconData: Icons.check_box,
+                        attribute: Attribute.unchecked,
+                      ),
                       QuillToolbarColorButton(
                         controller: controller,
                         isBackground: false,
                         options: const QuillToolbarColorButtonOptions(
+                          iconSize: 20,
                           iconTheme: QuillIconTheme(borderRadius: 10),
                         ),
                       )
