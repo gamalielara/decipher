@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
                 width: double.infinity,
                 margin: const EdgeInsets.only(left: 10),
                 child: Text(
-                  "My Notes",
+                  "My Journals",
                   style: boldText.copyWith(
                     fontSize: 40,
                   ),
@@ -36,22 +36,18 @@ class Body extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
-                width: double.infinity,
-                child: Wrap(
-                  spacing: 20,
-                  runSpacing: 20,
-                  alignment: WrapAlignment.center,
-                  children: List.generate(
-                    sampleNotes.length,
-                    (index) => NoteBox(
-                      color: AppThemeColor.primary,
-                      title: sampleNotes[index].title,
-                      body: sampleNotes[index].body,
-                    ),
+              Column(
+                children: List.generate(
+                  sampleNotes.length,
+                  (index) => NoteBox(
+                    color: AppThemeColor.primary,
+                    title: sampleNotes[index].title,
+                    body: sampleNotes[index].body,
+                    createdAt: sampleNotes[index].createdAt,
+                    lastModified: sampleNotes[index].lastModified,
                   ),
-                  // children: [],
                 ),
+                // children: [],
               ),
             ],
           ),
