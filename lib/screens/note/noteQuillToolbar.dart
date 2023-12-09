@@ -2,6 +2,34 @@ import 'package:decipher/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 
+class QuillIconButton extends StatelessWidget {
+  final QuillController controller;
+  final IconData iconData;
+  final Attribute attribute;
+
+  const QuillIconButton(
+      {super.key,
+      required this.controller,
+      required this.iconData,
+      required this.attribute});
+
+  @override
+  Widget build(BuildContext context) {
+    return QuillToolbarToggleStyleButton(
+      attribute: attribute,
+      controller: controller,
+      options: QuillToolbarToggleStyleButtonOptions(
+        iconData: iconData,
+        iconSize: 20,
+        iconTheme: const QuillIconTheme(
+          borderRadius: 10,
+          iconSelectedColor: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+
 class NoteQuillToolbar extends StatelessWidget {
   final QuillController controller;
 
@@ -21,83 +49,47 @@ class NoteQuillToolbar extends StatelessWidget {
               final controller = this.controller;
               return [
                 Expanded(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Wrap(
-                        spacing: 10,
-                        children: [
-                          QuillToolbarToggleStyleButton(
-                            attribute: Attribute.bold,
-                            controller: controller,
-                            options:  const QuillToolbarToggleStyleButtonOptions(
-                              iconData: Icons.format_bold,
-                              iconSize: 20,
-                            ),
-                          ),
-                          QuillToolbarToggleStyleButton(
-                            attribute: Attribute.italic,
-                            controller: controller,
-                            options: const QuillToolbarToggleStyleButtonOptions(
-                              iconData: Icons.format_italic,
-                              iconSize: 20,
-                            ),
-                          ),
-                          QuillToolbarToggleStyleButton(
-                            attribute: Attribute.underline,
-                            controller: controller,
-                            options: const QuillToolbarToggleStyleButtonOptions(
-                              iconData: Icons.format_underline,
-                              iconSize: 20,
-                            ),
-                          ),
-                          QuillToolbarClearFormatButton(
-                            controller: controller,
-                            options: const QuillToolbarClearFormatButtonOptions(
-                              iconData: Icons.format_clear,
-                              iconSize: 20,
-                            ),
-                          ),
-                          QuillToolbarSelectHeaderStyleButtons(
-                            controller: controller,
-                            options:
-                            const QuillToolbarSelectHeaderStyleButtonsOptions(
-                              iconSize: 20,
-                            ),
-                          ),
-                          QuillToolbarToggleStyleButton(
-                            attribute: Attribute.ol,
-                            controller: controller,
-                            options: const QuillToolbarToggleStyleButtonOptions(
-                              iconData: Icons.format_list_numbered,
-                              iconSize: 20,
-                            ),
-                          ),
-                          QuillToolbarToggleStyleButton(
-                            attribute: Attribute.ul,
-                            controller: controller,
-                            options: const QuillToolbarToggleStyleButtonOptions(
-                              iconData: Icons.format_list_bulleted,
-                              iconSize: 20,
-                            ),
-                          ),
-                          QuillToolbarToggleStyleButton(
-                            attribute: Attribute.blockQuote,
-                            controller: controller,
-                            options: const QuillToolbarToggleStyleButtonOptions(
-                              iconData: Icons.format_quote,
-                              iconSize: 20,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                  child: Wrap(
+                    spacing: 10.0,
+                    alignment: WrapAlignment.spaceBetween,
+                    children: [
+                      QuillIconButton(
+                          controller: controller,
+                          iconData: Icons.format_bold,
+                          attribute: Attribute.bold),
+                      QuillIconButton(
+                          controller: controller,
+                          iconData: Icons.format_italic,
+                          attribute: Attribute.italic),
+                      QuillIconButton(
+                          controller: controller,
+                          iconData: Icons.format_underline,
+                          attribute: Attribute.underline),
+                      QuillIconButton(
+                          controller: controller,
+                          iconData: Icons.format_list_numbered,
+                          attribute: Attribute.ol),
+                      QuillIconButton(
+                          controller: controller,
+                          iconData: Icons.format_list_bulleted,
+                          attribute: Attribute.ul),
+                      QuillIconButton(
+                          controller: controller,
+                          iconData: Icons.format_quote,
+                          attribute: Attribute.blockQuote),
+                      QuillToolbarColorButton(
+                        controller: controller,
+                        isBackground: false,
+                        options: const QuillToolbarColorButtonOptions(
+                          iconTheme: QuillIconTheme(borderRadius: 10),
+                        ),
+                      )
+                    ],
                   ),
+                ),
               ];
             }),
       ),
     );
   }
 }
-
-
-

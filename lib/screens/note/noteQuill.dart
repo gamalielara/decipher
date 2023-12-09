@@ -1,4 +1,5 @@
 import 'package:decipher/screens/note/noteQuillToolbar.dart';
+import 'package:decipher/theme/colors.dart';
 import 'package:decipher/theme/text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_quill/flutter_quill.dart';
@@ -77,7 +78,7 @@ class _NoteQuillState extends State<NoteQuill> {
                           const VerticalSpacing(1, 1),
                           const VerticalSpacing(1, 1),
                           const BoxDecoration()),
-                      color: const Color(0xFFE5E5E5),
+                      color: AppThemeColor.textWhite,
                     ),
                   ),
                 ),
